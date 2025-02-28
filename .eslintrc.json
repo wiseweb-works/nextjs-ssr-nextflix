@@ -1,0 +1,27 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "plugins": ["react", "react-hooks", "jsx-a11y", "unused-imports"],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "react/no-unescaped-entities": "warn",
+    "semi": ["error", "always"],
+    "quotes": ["error", "single"],
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": "warn",
+    "max-len": ["error", { "code": 100 }],
+    "no-console": "warn",
+    "no-debugger": "error"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
