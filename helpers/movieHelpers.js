@@ -1,10 +1,9 @@
 const API_KEY = process.env.TMDB_KEY;
+const TMDB_URL = 'https://api.themoviedb.org/3/movie';
 
 export const getMovies = async (type) => {
   try {
-    const res = await fetch(
-      `https://api.themoviedb.org/3/movie/${type}?api_key=${API_KEY}`
-    );
+    const res = await fetch(`${TMDB_URL}/${type}?api_key=${API_KEY}`);
 
     const { results } = await res.json();
 
@@ -17,9 +16,7 @@ export const getMovies = async (type) => {
 
 export const getMovieDetails = async (movieId) => {
   try {
-    const res = await fetch(
-      `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`
-    );
+    const res = await fetch(`${TMDB_URL}/${movieId}?api_key=${API_KEY}`);
 
     const data = await res.json();
 
@@ -32,9 +29,7 @@ export const getMovieDetails = async (movieId) => {
 
 export const getYoutube = async (movieId) => {
   try {
-    const res = await fetch(
-      `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${API_KEY}`
-    );
+    const res = await fetch(`${TMDB_URL}/${movieId}/videos?api_key=${API_KEY}`);
 
     const { results } = await res.json();
 
