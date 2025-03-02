@@ -50,7 +50,7 @@ const Register = () => {
             className="bg-black/90 px-16 py-16 self-center relative
           lg:w-2/5 lg:max-w-md rounded-md w-full"
           >
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} data-test="signup-form">
               <h2 className="text-red-600 text-2xl font-medium text-center tracking-[0.1em] mb-3">
                 Sign Up
               </h2>
@@ -58,6 +58,7 @@ const Register = () => {
                 <div key={index} className="relative z-0 w-full mb-6 group">
                   <input
                     name={field.name}
+                    data-test={`${field.name}-input`}
                     className="peer border-b-2 border-gray-300 text-white focus:border-red-500
                     outline-none w-full p-2"
                     type={field.type}
@@ -76,6 +77,7 @@ const Register = () => {
                 </div>
               ))}
               <button
+                data-test="register-button"
                 className="bg-red-600 hover:bg-red-700 text-white font-bold
                 py-2 px-4 rounded w-full"
                 type="submit"
@@ -84,6 +86,7 @@ const Register = () => {
               </button>
 
               <button
+                data-test="continue-google-button"
                 className="bg-gray-800 hover:bg-gray-900 text-white font-bold
                 py-2 px-4 rounded w-full flex items-center justify-center gap-2 mt-3"
                 type="button"
@@ -93,7 +96,11 @@ const Register = () => {
               </button>
               <p className="text-gray-400 mt-4 text-center">
                 Already have an account?{' '}
-                <Link href="/login" className="text-red-500 hover:underline">
+                <Link
+                  href="/login"
+                  className="text-red-500 hover:underline"
+                  data-test="sign-in-here"
+                >
                   Sign in here
                 </Link>
               </p>

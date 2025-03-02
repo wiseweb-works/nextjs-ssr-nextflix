@@ -40,7 +40,7 @@ const Login = () => {
             className="bg-black/90 px-16 py-16 self-center relative
           lg:w-2/5 lg:max-w-md rounded-md w-full"
           >
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} data-test="login-form">
               <h2 className="text-red-600 text-2xl font-medium text-center tracking-[0.1em] mb-3">
                 Sign In
               </h2>
@@ -50,6 +50,7 @@ const Login = () => {
                 return (
                   <div key={id} className="relative z-0 w-full mb-6 group">
                     <input
+                      data-test={id + '-area'}
                       id={id}
                       name={id}
                       type={id}
@@ -72,6 +73,7 @@ const Login = () => {
               })}
 
               <button
+                data-test="submit-button"
                 className="bg-red-600 hover:bg-red-700 text-white
                 font-bold py-2 px-4 rounded w-full"
                 type="submit"
@@ -89,7 +91,11 @@ const Login = () => {
               </button>
               <p className="text-gray-400 mt-4 text-center">
                 Don&apos;t have any account?{' '}
-                <Link href="/register" className="text-red-500 hover:underline">
+                <Link
+                  href="/register"
+                  className="text-red-500 hover:underline"
+                  data-test="create-an-account"
+                >
                   Create an Account
                 </Link>
               </p>

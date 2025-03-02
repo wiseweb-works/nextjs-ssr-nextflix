@@ -42,6 +42,7 @@ const Navbar = () => {
                 <MenuButton
                   className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2
                   focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                  data-test="userMenu"
                 >
                   <span className="sr-only">Open user menu</span>
                   <Image
@@ -71,6 +72,7 @@ const Navbar = () => {
                   {['Register', 'Login', 'Profile'].map((item, index) => (
                     <MenuItem key={index}>
                       <Link
+                        data-test={`${item}-Menu`}
                         href={`/${item.toLowerCase()}`}
                         className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100"
                       >
@@ -80,6 +82,7 @@ const Navbar = () => {
                   ))}
                   <MenuItem>
                     <button
+                      data-test="Logout-Menu"
                       className="block w-full text-start px-4 py-2 text-sm text-gray-700
                          data-[focus]:bg-gray-100 cursor-pointer"
                       onClick={logOut}

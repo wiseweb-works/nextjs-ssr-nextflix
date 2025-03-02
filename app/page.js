@@ -12,7 +12,10 @@ export default function Home() {
         priority
       />
       <div className="bg-black w-full h-full bg-opacity-50">
-        <div className="relative top-2/4 m-auto text-white text-center">
+        <div
+          className="relative top-2/4 m-auto text-white text-center"
+          data-test="main-title"
+        >
           <h1 className="text-5xl font-extrabold mb-3">
             Unlimited movies, TV shows, and more
           </h1>

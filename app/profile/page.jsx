@@ -11,13 +11,17 @@ const Profile = () => {
   return (
     <div className="flex items-center justify-center pt-20 bg-black/90 h-dvh">
       <div className="flex flex-col">
-        <h1 className="text-3xl md:text-6xl text-white text-center">
+        <h1
+          className="text-3xl md:text-6xl text-white text-center"
+          data-test="profile-title"
+        >
           Who&apos;s watching?
         </h1>
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-10">
           {['blue', 'red', 'slate', 'green'].map((item, index) => (
             <div
               role="button"
+              data-test={`button-${index}`}
               tabIndex={0}
               onClick={() => router.push('/movies')}
               onKeyDown={(e) => {
@@ -31,6 +35,7 @@ const Profile = () => {
               <div
                 className="w-44 h-44 rounded-md flex items-center justify-center overflow-hidden 
               border-transparent group-hover:cursor-pointer group-hover:border-white border-2"
+                data-test="user-logos"
               >
                 <Image
                   draggable={false}
